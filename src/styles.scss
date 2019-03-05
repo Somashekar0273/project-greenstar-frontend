@@ -1,0 +1,73 @@
+$titanium: #686868;
+$font-input-placeholder: Regular;
+$font-size-small: 12px;
+$emerald: #3dc238;
+$ruby: #a3403e;
+
+.textInputContainer {
+  background-color: white;
+}
+
+
+.inputStyleComponents {
+    display: inline-block;
+    margin: 10px;
+}
+
+// placeholder default css
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $titanium;
+  font-family: $font-input-placeholder;
+  font-size: $font-size-small;
+}
+::-moz-placeholder { 
+  color: $titanium;
+  font-family: $font-input-placeholder;
+  font-size: $font-size-small;
+}
+:-ms-input-placeholder { 
+  color: $titanium;
+  font-family: $font-input-placeholder;
+  font-size: $font-size-small;
+}
+
+
+// Text Field Non Focussed class (styles can be applied to the input element but defining a class for testing)
+input[type=text] {
+    //border: 1px solid $titanium;
+    border-radius: 3px;
+   /* padding: 8px 10px;
+    vertical-align: middle;
+    outline: none;*/
+    width:50%;
+    margin: 0 0 0 15em;
+}
+
+input[type=text]:focus, .textInputFocussed {
+    box-shadow: 0px 0px 5px lavender;
+}
+
+.textInputNonFocussedValid {
+    box-shadow: 0px 0px 5px $emerald;
+}
+
+.textInputFocussedValid {
+    box-shadow: 0px 0px 5px springgreen;
+}
+
+.textInputNonFocussedInvalid {
+    box-shadow: 0px 0px 5px $ruby;
+}
+
+.textInputFocussedInvalid {
+    box-shadow: 0px 0px 5px crimson;
+}
+
+input[type=text]:disabled {
+  opacity: 0.5;
+  background-color: #fff;
+}
+
+input[type=radio] {
+  margin: 10px;
+}

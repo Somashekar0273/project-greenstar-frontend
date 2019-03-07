@@ -18,7 +18,7 @@ class GroupList extends Component {
   componentDidMount() {
     //this.setState({isLoading: true});
 
-    fetch('api/groups')
+    fetch(`/api/group/${id}`)
       .then(response => response.json())
       .then(data => this.setState({groups: data}));
   }
@@ -93,9 +93,10 @@ class GroupList extends Component {
                 <Table className="mt-4">
                     <thead>
                     <tr>
+                    <th width="20%">ID</th>
                     <th width="20%">Name</th>
-                    <th width="20%">Location</th>
-                    <th>Events</th>
+                    <th>Section</th>
+                    <th>Classs</th>
                     <th width="10%">Actions</th>
                     </tr>
                     </thead>

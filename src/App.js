@@ -14,11 +14,17 @@ import './slider-animations.css';
 // App           //
 ///////////////////
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  }
+
   showSettings (event) {
     event.preventDefault();
   }
   render() {  
     const {header,main,footer} = this.props;
+    const email = this.props.email;
     const content = [
       {
         title: 'Green Star Application',
@@ -55,14 +61,15 @@ class App extends React.Component {
         <div className="app">
         <header className="header-logo">
           <img src={headerLogo} alt="logo" />
+          
           <span className="logout" align="right">
-          <a href="/Login">Logout</a>
+              <a href="/Login">Logout</a>
           </span>
       </header>
 
         <main className="main">
           <span className="home">Home</span>
-          <Slider className="slider">
+          <Slider className="slider" autoplay="400ms">
           {content.map((item, index) => (
               <div
                 key={index}

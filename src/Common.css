@@ -131,3 +131,9 @@ body {
     font-size: 12px;
     color: #61dafb;
 }
+
+.errorText {
+  color: red;
+  font-size: 1.5em;
+  text-align: left;
+}

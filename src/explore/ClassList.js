@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-class Contact extends Component{
+
+class Stuff extends Component{
  render(){
 return (
 <div>
     <h1>
-    Contact Outreach
+    Stuff Outreach
     </h1>
 </div>
 )
  }
 }
 
-export default Contact;
+export default Stuff;

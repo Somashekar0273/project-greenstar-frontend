@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, BrowserRouter as Router} from 'react-router-dom';
+import { Link, withRouter, BrowserRouter as Router} from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 //import AppNavbar from './AppNavbar';
 
@@ -23,13 +23,12 @@ class GroupEdit extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async componentDidMount() {
-      alert('Params = ' +this.props.match.params.id);
+  /*async componentDidMount() {
     if (this.props.match.params.id !== 'new') {
       const group = await (await fetch(`/api/group/${this.props.match.params.id}`)).json();
       this.setState({item: group});
     }
-  }
+  }*/
 
   handleChange(event) {
     const target = event.target;
@@ -95,12 +94,9 @@ class GroupEdit extends Component {
                      onChange={this.handleChange} autoComplete="address-level1"/>
             </FormGroup>
           </div>
-          <FormGroup>
-              
+          <FormGroup>   
             <Button color="primary" type="submit">Save</Button>{' '}
-            
-            <a href="/GroupList">Cancel</a>
-            
+            <Button color="success" tag={Link} to="/groups">Cancel</Button>
           </FormGroup>
         </Form>
       </Container>

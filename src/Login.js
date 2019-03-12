@@ -1,31 +1,5 @@
 import React, {Component} from 'react';
-//import { Button, Input , Checkbox} from 'antd';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './Common.css';
-import './App.css';
-//import styles from './styles.scss';
-import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
-/*import {
-    AppRegistry,
-    Text,
-    Image,
-    View,
-    StyleSheet,
-    TextInput,
-    Linking,
-    Alert
-  } from 'react-native';*/
-//import { gql, graphql } from 'react-apollo';
-//import gql from 'graphql-tag';
-//import { graphql } from 'react-apollo';
-import './Login.css';
-import logo from './logo.svg';
-import headerLogo from './logo.jpg';
-//import { Redirect } from 'react-router-dom';
-//import { withRouter, Link} from 'react-router-dom';
-//import {Router, Route, hashHistory} from "react-router";
-//import { Button, Card, CardBody, CardGroup, Col, Container, Input, InputGroup, InputGroupAddon, InputGroupText, Row, NavLink  } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 
 function validate(email, password) {
     // we are going to store errors for all fields
@@ -52,7 +26,6 @@ function validate(email, password) {
     }
     return errors;
   }
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -95,60 +68,34 @@ class Login extends Component {
 
     render() {
         const { errors } = this.state;
-        const {header,main,footer} = this.props;
+        //const {header,main,footer} = this.props;
         const email = this.state.email;  
         const password = this.state.password;  
         return (
-            <div className="app">
-                 <header className="header-logo" >
-                 <img src={headerLogo} alt="logo" />
-                </header>
-                <main className="login-main">
-                <p>
-                            <img src={logo} className="App-logo" alt="logo" /> 
-                        </p>
-                    <Container> 
-                        
-                        <p>
-                            {errors.map(error => (
-                                <p key={error} className="errorText">Error: {error}</p>
-                            ))}
-
-                            <Input ref="email" className="inputText"  name="email" placeholder="Email" 
-                            onChange={e => this.onChange(e)} 
-                            value={email} />
-                            <br/>
-                            <Input ref="password"  name="password" placeholder="Password" 
-                            type="password"
-                            onChange={e => this.onChange(e)} 
-                            value={password} />
-                        
-                        <br />
+            <div>
+                <tr className="app">
+                    <td>
+                        {errors.map(error => (
+                            <p key={error} className="errorText">Error: {error}</p>
+                        ))}
+                    </td>&nbsp;&nbsp;&nbsp;
+                    <td>
+                        <Input ref="email" name="email" placeholder="Email" 
+                        onChange={e => this.onChange(e)} 
+                        value={email} />
+                    </td>&nbsp;&nbsp;&nbsp;
+                    <td>
+                        <Input ref="password"  name="password" placeholder="Password" 
+                        type="password"
+                        onChange={e => this.onChange(e)} 
+                        value={password} />
+                    </td>&nbsp;&nbsp;&nbsp;
+                    <td>
                         <Button onClick={() => this.onSubmit()} onKeyPress={() => this.onSubmit()} type="primary">Login</Button>
-                    </p>
-                    </Container> 
-                </main>
-                <footer className="footer">
-                    <span className="footer-span"> @Copyright; version:1.0</span>
-                    <span className="footer-link" >
-                        <a id="about" href="/About">About</a>
-                    </span>
-                    <span className="footer-link">
-                        <a id="contact"  href="/Contact">Contact</a>
-                    </span>
-                </footer>
+                    </td>
+                </tr>
             </div>
         );
     }
 }
-
-//const mutation = gql`
-//mutation($username: String!, $password: String!, $isAdmin: Boolean){
-   // login(email: $email, password: $password, isAdmin: $isAdmin) {
-    //    token
-    //    refreshToken
-    //}
-//}
-//`;
-
 export default Login;

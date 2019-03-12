@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import './Common.css';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class star extends Component {

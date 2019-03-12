@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import { Button, Container } from 'reactstrap';
+import React, { Component } from "react";
+import {
+  Route,
+  NavLink,
+  BrowserRouter as Router
+} from "react-router-dom";
+import {Dropdown, DropdownButton} from "react-bootstrap";
 
 class Home extends Component {
-  render() {
+  render (){
     return (
-        
-      <div>
-          <Router>
-        <Container fluid>
-          <Button color="link"><Link to="/groups">Manage JUG Tour</Link></Button>
-        </Container>
-        </Router>
-      </div>
+     <h1>test</h1>
     );
   }
 }
